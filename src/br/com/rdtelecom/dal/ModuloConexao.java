@@ -6,6 +6,7 @@
 package br.com.rdtelecom.dal;
 
 import java.sql.DriverManager;
+import javax.swing.JOptionPane;
 
 public class ModuloConexao {
 
@@ -24,8 +25,10 @@ public class ModuloConexao {
         try {
             Class.forName(driver);
             conexao = DriverManager.getConnection(url,user,senha);
+            
             return  conexao;
         } catch (Exception e) {
+           // JOptionPane.showMessageDialog(null, e);
             return null;
             
             
